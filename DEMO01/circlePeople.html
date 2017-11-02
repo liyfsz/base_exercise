@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>crumble</title>
+		<link rel="stylesheet" href="css/grumble/grumble.min.css" />
+		<!--
+        	作者：offline
+        	时间：2017-07-12
+        	描述：text：气泡提示框中的文本。
+angle：气泡提示框的旋转角度。
+distance：气泡提示框距离目标的距离。
+showAfter：显示气泡提示框之前的延迟时间。
+hideAfter：多长时间之后隐藏气泡提示框。
+hasHideButton：是否显示关闭按钮。
+buttonHideText：关闭按钮的文本。
+type：气泡提示框的类型。
+onShow：显示提示框时的回调函数。
+onBeginHide：开始隐藏提示框时的回调函数。
+onHide：隐藏提示框之后的回调函数。
+        -->
+		<style>
+    body {
+      font-size: 16px;
+      line-height: 24px;
+      background: #fff;
+      color: #330;
+      font-family: "Georgia", FreeSerif, serif;
+      padding-left: 30px;
+      }
+    #container {
+      width: 690px;
+      margin: 50px 0 50px 50px;
+      }
+    p, li {
+      margin: 16px 0 16px 0;
+      width: 550px;
+      }
+      p.break {
+        margin-top: 35px;
+        }
+    a, a:visited {
+      padding: 0 2px;
+      text-decoration: none;
+      background: #f7f7bb;
+      color: #330;
+      }
+      a:active, a:hover {
+        color: #000;
+        background: #ff8;
+        }
+      .contact {
+        background: transparent;
+        color: #441;
+        }
+        .contact:active, .contact:hover {
+          background: transparent;
+          }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 80px;
+      display:inline-block;
+      border: 1px solid red;
+      }
+    b.header {
+      font-size: 18px;
+      }
+    span.alias {
+      font-size: 14px;
+      font-style: italic;
+      margin-left: 20px;
+      }
+    table {
+      margin: 16px 0; padding: 0;
+      }
+      tr, td {
+        margin: 0; padding: 0;
+        }
+        td {
+          padding: 9px 15px 9px 0;
+          }
+          td.definition {
+            line-height: 18px;
+            font-size: 14px;
+            }
+    code, pre, tt {
+      font-family: Consolas, "Lucida Console", monospace;
+      font-size: 12px;
+      line-height: 18px;
+      color: #444;
+      }
+    code {
+      margin-left: 20px;
+      }
+    pre {
+      font-size: 12px;
+      padding: 2px 0 2px 12px;
+      border-left: 6px solid hotpink;
+      margin: 0px 0 10px;
+      }
+    li pre {
+      padding: 0;
+      border-left: 0;
+      margin: 6px 0 6px 0;
+      }
+    #diagram {
+      margin: 20px 0 0 0;
+      }
+  </style>
+  
+  <style>
+    .ex {
+      position: absolute;
+      width: 100px;
+      height: 300px;
+      padding-left:3px;
+      border:1px solid #ddd;
+      font-size: 12px;
+      font-family: Consolas, "Lucida Console", monospace;
+      top:300px ;
+      }
+      
+    .grumble-button {
+      font-size:11px;
+      }
+      
+      .object{
+        width: 50px;
+        height: 100px;
+        margin-top: 100px;
+      }
+  </style>
+		
+	</head>
+	<body>
+	  <div id="container">
+    <header>
+      <h1 class="object">grumble.js</h1>
+    </header>
+    <div id="main" role="main">
+      
+      <h2>Examples</h2>
+      <p>
+        The following code animates a set of grumbles, <a href="#" id="ex1">click here</a> to
+        see it in action.
+      </p>
+      
+      <span class="ex" id="grumble1">No text</span>
+      
+      <span class="ex" id="grumble2">Different style</span>
+      <span class="ex" id="grumble3">With close button</span>
+      <span class="ex" id="grumble4">Enlarged for text</span>
+      
+      <br/><br/>
+      
+      
+            
+    </div>
+  </div>
+  <script src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/grumble/jquery.grumble.min.js" ></script>
+    <script>
+      $('h1').grumble(
+      {
+        text: 'Bubble-tastic!', 
+        angle: 0,
+        
+      }
+    );
+    
+    $('h1').grumble(
+      {
+        text: '111', 
+        angle: 50,
+      }
+    );
+    $('h1').grumble(
+      {
+        text: '2222', 
+        angle: 100,
+        
+      }
+    );
+    
+    $('h1').grumble(
+      {
+        text: '44444', 
+        angle: 150,
+      }
+    );
+    
+    var isSequenceComplete = true;
+    $('#ex1').click(function(e){
+    
+      e.preventDefault();
+    
+      if(isSequenceComplete === false) return true;
+      isSequenceComplete = false;
+      
+      $('#grumble1').grumble(
+        {
+          text: '第一个', 
+          angle: 200, 
+          distance: 3, 
+          showAfter: 1000,
+          hideAfter: false
+        }
+      );
+      $('#grumble2').grumble(
+        {
+          text: 'Ohh, blue...', 
+          angle: 180, 
+          distance: 0, 
+          showAfter: 2000,
+          type: 'alt-', 
+          hideAfter: false
+        }
+      );
+      $('#grumble3').grumble(
+        {
+          text: 'Click me!',
+          angle: 150,
+          distance: 3,
+          showAfter: 3000,
+          hideAfter: false,
+          hasHideButton: true, // just shows the button
+          buttonHideText: 'Pop!'
+        }
+      );
+      $('#grumble4').grumble(
+        {
+          text: 'Whoaaa, this is a lot of text that i couldn\'t predict',
+          angle: 85,
+          distance: 50,
+          showAfter: 4000,
+          hideAfter: false,
+          onHide: function(){
+            isSequenceComplete = true;
+          }
+        }
+      );
+
+    });
+  
+    $('#darkside').click(function(e){
+      var $me = $(this), interval;
+      
+      e.preventDefault();
+      
+      $me.grumble(
+        {
+          angle: 130,
+          text: 'Look at me!',
+          type: 'alt-', 
+          distance: 10,
+          hideOnClick: true,
+          onShow: function(){
+            var angle = 130, dir = 1;
+            interval = setInterval(function(){
+              (angle > 220 ? (dir=-1, angle--) : ( angle < 130 ? (dir=1, angle++) : angle+=dir));
+              $me.grumble('adjust',{angle: angle});
+            },25);
+          },
+          onHide: function(){
+            clearInterval(interval);
+          }
+        }
+      );
+    });
+  
+  </script>
+	</body>
+</html>

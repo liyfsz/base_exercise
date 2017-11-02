@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('input[readonly]').val(111);
+  $("#b01").click(function(){
+  	alert(222);
+  htmlobj=$.ajax({url:"http://192.168.2.99:8080/cs/cscoocub/createCsCooCuB",async:false});
+  $("#myDiv").html(htmlobj.responseText);
+  });
+});
+    
+		</script>
+	</head>
+	<body>
+		  <div id="myDiv">
+		  	
+		  	
+		  </div>
+		  <button id="b01">aaa</button>
+		  <input type="text"  readonly=""/>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+1、http://www.360doc.com/content/15/0907/17/16237433_497508972.shtml
+2、以{{开始，添一些内容，以}}结束
+3、<script id="tr-template" type="text/x-handlebars-template">
+	 template content
+   </srcipt>
+	这段模版加载到浏览器
+4、在js中获取模版
+   var source   = $("#tr-template").html();
+   编译模版
+   var template = Handlebars.compile(source);
+   得到后台数据json
+   var json＝＝＝》ajax;
+   解析json成html
+   var html = template(jsonCon);
+   将html置于所需位置
+   $("#setHtml").html(html);
+5、不能进行与或非运算，需要自定义,有if判断，unless与if相反
+6、注册方法
+   Handlebars.registerHelper
+7、注释：{{!}}/{{!-- --}},如果希望注释展示就用html的注释
+
+   

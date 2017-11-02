@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript控制表格 实现动态添加和删除表格内容</title>
+    <meta charset="utf-8"/>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!--
+        	作者：81111@qq.com
+        	时间：2017-05-21
+        	描述：表格删除增加一行重新排序
+        	
+        -->
+  </head>
+  <style>
+    body {
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 12px;
+        margin: 0px;
+        padding: 0px;
+      }
+      
+      table {
+        font-size: 12px;
+        font-family: Verdana, Geneva, sans-serif
+      }
+      
+      td {
+        text-align: center;
+        background: #FFF
+      }
+      
+      tr {
+        height: 20px;
+      }
+      
+      th {
+        background: #9DACBF;
+        color: #FFF;
+        height: 20px;
+        line-height: 20px
+      }
+      
+      a {
+        color: #99C;
+      }
+      
+      a:hover {
+        color: #F93
+      }
+      
+      .input td {
+        padding: 2px
+      }
+      
+      .input input {
+        width:100%;
+        border: 1px solid #000;
+        overflow: hidden
+      }
+  </style>
+
+  <body>
+    
+    <table id="nw" cellpadding="0" cellspacing="1" border="0" width="320" bgcolor="#CCCC99">
+      <th>编号</th>
+      <th>名称</th>
+      <th>操作</th>
+      <tr class="input">
+        <td>1</td>
+        <td><input type="text" id="add" /></td>
+        <td style="width: 52px" onClick="delRow(event)"><input type="button" value="删 除" class="btn" /></td>
+      </tr>
+      <tr class="input">
+        <td>2</td>
+        <td><input type="text" id="add" /></td>
+        <td style="width: 52px" onClick="delRow(event)"><input type="button" value="删 除" class="btn" /></td>
+      </tr>
+      <tr class="input">
+        <td>3</td>
+        <td><input type="text" id="add" /></td>
+        <td style="width: 52px" onClick="delRow(event)"><input type="button" value="删 除" class="btn" /></td>
+      </tr>
+      <tr class="input">
+        <td>4</td>
+        <td><input type="text" id="add" /></td>
+        <td style="width: 52px" onClick="delRow(event)"><input type="button" value="删 除" class="btn" /></td>
+      </tr>
+    </table>
+    
+    <script>
+      //删除行
+      function delRow(e) {
+          var targetTable = $("#nw").get(0);
+          targetTable.deleteRow(e.target.parentNode.parentNode.cells[0].innerHTML);
+          for (var i = 0; i<targetTable.rows.length; i++) {
+            if (i != 0)
+            targetTable.rows[i].cells[0].innerHTML = i;
+          }
+      }
+    </script>
+  </body>
+
+</html>

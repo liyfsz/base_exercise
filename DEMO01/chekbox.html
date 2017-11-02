@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mockjs</title>
+        <script src="js/jquery-1.11.1.min.js"></script>
+    </head>
+    
+    <body>
+    <form>
+    	  <input type="checkbox" value="1" name="loanTypePlOpList"/>1期数
+    	  <input type="checkbox" value="2" name="loanTypePlOpList"/>2期数
+    	  <input type="checkbox" value="3" name="loanTypePlOpList"/>3期数
+    	  <select onfocus="selTerm()">
+    	  	  <option>请选择</option>
+    	  </select>
+    </form>        
+    </body>
+    <script>
+    	function selTerm(){
+    		var termList = $("input[name=loanTypePlOpList]:checked");
+    		console.log($(termList[0]).val());
+    		var termListDic =	new Array();  
+    		for (var i=0;i<termList.length;i++) {
+        termListDic[ i ] = new Object();
+    			termListDic[i].code = $(termList[i]).val();
+    			termListDic[i].name = $(termList[i]).get(0).nextSibling.nodeValue;
+    		}
+    		console.log(termListDic);
+    	}
+    </script>
+</html>

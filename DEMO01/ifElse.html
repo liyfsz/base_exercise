@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>else的使用</title>
+    <meta charset="utf-8"/>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!--
+        	作者：85319019@qq.com
+        	时间：2017-05-21
+        	描述：
+        	
+        -->
+  </head>
+  <style>
+
+  </style>
+
+  <body>
+    <div id="showProgress">
+      
+    </div>
+    <p id="goOnCoN"></p>
+    <script>
+      $(function(){
+        $("#showProgress").text("默认值");
+//      if(false){
+        if(true){
+          $("#showProgress").text("执行了if");
+          return;
+          console.log("执行到return不再继续");
+        }else{
+          $("#showProgress").text("执行了else");
+        }
+        $("#goOnCoN").text("执行了if结束");
+      });
+    </script>
+  </body>
+
+</html>

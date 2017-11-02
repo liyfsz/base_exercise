@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	    <meta charset="utf-8" />
+        <title>demo02</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/pullToRefresh.css" />
+    </head>
+    <style>
+    body,html{
+    	margin: 0 auto;
+    	padding: 0px;
+    	font-size: 2rem;
+    }
+    	  .borderRadius{
+      	width: 100px;
+      	height: 100px;
+      	border-radius: 10px;
+      	background-color: red;
+      }
+      #wrapper{
+      	background-color: #f2f2f2;
+      	/*height控制滑动的留白百分比*/
+      }
+      .pullDown, .pullUp{
+      	height: 3rem;
+      }
+      ul li{
+      	margin-top: 20px;
+      	padding: 20px 1px;
+      }
+    </style>
+    <body>
+        	 <div class="borderRadius">
+        	ssss
+        </div>
+        <div id="wrapper">
+        	  <ul class="listUl">
+          	<li>
+        		  <p>sssssdadasdsad</p>
+        		  <p>这是一个测试滑动的list</p>
+         	</li>
+         	<li>
+        		  <p>sssssdadasdsad</p>
+        		  <p>这是一个测试滑动的list</p>
+         	</li>
+         	<li>
+        		  <p>sssssdadasdsad</p>
+        		  <p>这是一个测试滑动的list</p>
+         	</li>
+         	<li>
+        		  <p>sssssdadasdsad</p>
+        		  <p>这是一个测试滑动的list</p>
+         	</li>
+        </ul>
+        </div>
+        
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/iscroll.js" ></script>
+        <script type="text/javascript" src="js/pullToRefresh.js" ></script>
+        <script>
+        	refresher.init({
+	id:"wrapper",//<------------------------------------------------------------------------------------┐
+	pullDownAction:Refresh,                                                            
+	pullUpAction:Load 																			
+	});																																							
+function Refresh() {																
+	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+		var el, li, i;																		
+		el =document.querySelector("#wrapper ul");					
+		//这里写你的刷新代码				
+		document.getElementById("wrapper").querySelector(".pullDownIcon").style.display="none";		
+		document.getElementById("wrapper").querySelector(".pullDownLabel").innerHTML="<img src='css/ok.png'/>刷新成功";																					 
+		setTimeout(function () {
+			wrapper.refresh();
+			document.getElementById("wrapper").querySelector(".pullDownLabel").innerHTML="";								
+			},1000);//模拟qq下拉刷新显示成功效果
+		/****remember to refresh after  action completed！ ---yourId.refresh(); ----| ****/
+	}, 1000);
+}
+function Load() {
+	setTimeout(function () {// <-- Simulate network congestion, remove setTimeout from production!
+		var el, li, i;
+		el =document.querySelector("#wrapper ul");
+		for (i=0; i<2; i++) {
+			li = document.createElement('li');
+			li.innerHTML='<p>sssssdadasdsad</p>'+i+
+        		             '<p>这是一个测试滑动的list</p>';
+			el.appendChild(li, el.childNodes[0]);
+		}
+		wrapper.refresh();/****remember to refresh after action completed！！！   ---id.refresh(); --- ****/
+	},2000);	
+}
+        </script>
+    </body>
+</html>

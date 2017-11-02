@@ -1,0 +1,27 @@
+{"class":"三班",
+"students":
+  [
+   {"name":"<h6>张三</h6>",
+    "age":"<h6>20</h6>",
+    "sex":"male",
+    "work":{"year":"三","indus":"web开发"},
+    "salary":5000,
+    "bonus":200,
+    "favs":[{"fir":"a","sec":"b"},{"fir":"a1","sec":"b1"}],
+    "formatMoney":"和help块冲突用this"},
+   {"name":"张三",
+    "age":"20",
+    "sex":"female",
+    "work":{"year":"四","indus":"java开发"},
+    "salary":"8000",
+    "bonus":300,
+    "favs":[{"fir":"c","sec":"d"},{"fir":"c1","sec":"d1"}]},
+    {"name":"张三",
+    "age":30,
+    "sex":"x",
+    "work":{"year":"四","indus":"java开发"},
+    "salary":"8000",
+    "bonus":300,
+    "favs":[{"fir":"c","sec":"d"},{"fir":"c1","sec":"d1"}]}
+   ]
+   }

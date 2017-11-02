@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>label for关联</title>
+		<style>
+			input+label{
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background-color: red;
+				border-radius: 50%;
+				line-height: 20px;
+				text-align: center;
+			}
+			input{
+				display: none;
+			}
+			input[checked='checked']+label{
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<input id="fruit01" type="radio" name="fruit" checked="checked"/>
+		<label for="fruit01">1</label>葡萄
+		
+		<input id="fruit02" type="radio" name="fruit"/>
+		<label for="fruit02">2</label>柚子
+		
+		<input id="fruit03" type="radio" name="fruit"/>
+		<label for="fruit03">3</label>苹果
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script>
+		$("label").click(function(){
+			alert($(this).prev("input").is(':checked'));
+			$(this).siblings('input').attr('checked',false);
+			$(this).prev("input").attr('checked','checked');
+		})
+	</script>
+</html>

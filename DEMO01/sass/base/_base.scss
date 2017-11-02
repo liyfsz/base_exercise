@@ -1,0 +1,62 @@
+$blue: #1875e7;
+$size20:20px;
+$var:40px;
+div {
+  color: $blue;
+}
+
+$side: left;
+.rounded {
+  border-#{$side}-radius: 5px;
+}
+body {
+  margin: (14px/2);
+  top: 50px + 100px;
+  right: $var * 10%;
+}
+
+div{
+    h1 {
+        color: red;
+    }
+}
+
+p {
+    border: {
+        color: $blue;
+    }
+}
+
+a {
+    &:hover{
+        color: $blue;
+    }
+}
+
+.class1{
+    width: 100px;
+    height: 100px;
+}
+
+.class2{
+    @extend .class1;
+    font-size: $size20;
+}
+
+@mixin leftFun{
+    float: left;
+    margin-left: 10px;
+}
+
+.callDiv{
+    @include leftFun;
+}
+
+@mixin leftFunPara($value:10px){
+    float: left;
+    margin-left: $value;
+}
+
+.callDivParam{
+    @include leftFun(20px);
+}

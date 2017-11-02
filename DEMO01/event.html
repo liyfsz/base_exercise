@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>event</title>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script>
+		  function submitM(event){
+				var eventObj = window.event.target;
+				alert(eventObj);
+				var urlPage = $(eventObj).parents("form").data('href');
+				window.location.href=urlPage;
+			};
+			
+		  $("#but01").click(function(event){
+		  	 submitM(event);
+		  });
+		  $(function(){
+		  	console.log($("input").attr('readonly'));
+		  	console.log($("input[readonly='false'].asd").val());
+		  })
+			
+		</script>
+	</head>
+	<body>
+		<form data-href="baidu.com">
+			<input type="text" value="123" class="asd"/>
+		<button id="but01" type="button">aaa</button>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>监控字数变化</title>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+	</head>
+	<body>
+	  <textarea onkeyup="countNum(this)"></textarea>
+	   <div id="countNum" style="color: blue">还可输入<span id="num">30</span>个汉字</div>
+
+	  <script>
+	     function countNum(e){
+            var value=$(e).val();
+            var cArr = value.match(/([\u0391-\uffe5])/ig); // 返回中文的字符
+            //两位数字算一个中文
+            /*var num=Math.floor((90-value.length-2*(cArr == null ? 0 : cArr.length))/3);*/
+            //长度就是字数-不分数字和汉字
+            var num = 30-value.length;
+            $("#num").text(num);
+            if(num>=0){
+                $("#countNum").css({"color": "blue"});
+            }else{
+                $("#countNum").css({"color": "red"});               
+            }
+        }
+
+	  </script>
+	</body>
+</html>

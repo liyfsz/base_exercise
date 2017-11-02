@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script>
+			
+		</script>
+		<style>
+.main-menu > li:hover > .sub-menu li:hover > .sub-menu {
+    display: block;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.10);
+    border-radius: 2px;
+    background: #fff !important;
+    /*width: 185px;*/
+    border: 1px solid red;
+    padding-bottom: 2px;
+}
+.main-menu > li:hover > .sub-menu li:hover > ul:empty{
+	  border: none !important;
+    padding-bottom: 0px !important;
+    background-color: black;
+}
+  .first > li ul{
+  	border: 1px solid red;
+  }
+  .first > li ul:empty{
+  	border: 1px solid black;
+  } 
+		</style>
+	</head>
+	<body>
+		  <ul class="first">
+		  	  <li>
+		  	  	  <a>1111</a>
+		  	  	  <ul>
+		  	  	  	  <li>不能有空格</li>
+		  	  	  </ul>
+		  	  </li>
+		  	  <li>
+		  	  	  <a>3333</a>
+		  	  	  <ul></ul>
+		  	  </li>
+		  </ul>
+		  <ul class="main-menu">
+		  	  <li>
+		  	  	  <a class="sub-item">
+		  	  	  	  aaa
+		  	  	  </a>
+		  	  	  <ul class="sub-menu">
+		  	  	  	  <li>
+		  	  	  	  	  <a>2312312</a>
+		  	  	  	  </li>
+		  	  	  </ul>
+		  	  </li>
+		  	  <li>
+		  	  	  <a class="sub-item">
+		  	  	  	  asdsa
+		  	  	  </a>
+		  	  	  <ul class="sub-menu">
+		  	  	  	  	  <li>
+		  	  	  	  	  	  <a>aaa</a>
+		  	  	  	  	  	  <ul class="sub-menu"></ul>
+		  	  	  	  	  </li>
+		  	  	  	  	  <li>aa</li>
+		  	  	  	  </ul>
+		  	  </li>
+		  	  <li>
+		  	  	  <a class="sub-item">
+		  	  	  	  asdsa
+		  	  	  </a>
+		  	  	  <ul class="sub-menu">
+		  	  	  	  	  <li>
+		  	  	  	  	  	  <a>aaa</a>
+		  	  	  	  	  	  <ul class="sub-menu">
+		  	  	  	  	  	  	  <li>aaaa</li>
+		  	  	  	  	  	  </ul>
+		  	  	  	  	  </li>
+		  	  	  	  	  <li>aa</li>
+		  	  	  	  </ul>
+		  	  </li>
+		  </ul>
+	</body>
+</html>

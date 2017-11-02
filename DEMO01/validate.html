@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>validate</title>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/validate/jquery.validate.min.js"></script>
+    <script src="js/validate/additional-methods.min.js"></script>
+    <script src="js/validate/messages_zh.min.js"></script>
+  </head>
+
+  <body>
+    <form id="myform">
+      <div>
+        <label>编号：</label>
+        <input type="text" value="" name="idCard" class="required" maxlength="20" />
+      </div>
+      <div>
+        <label>编号2：</label>
+        <input type="text" name="email" class="required" min="10" data-msg-min="最小输入10"/>
+      </div>
+      <fieldset>
+      <legend>垃圾邮件</legend>
+      <label for="spam_email">
+        <input type="checkbox" class="checkbox" id="spam_email" value="email" name="spam[]" required minlength="2">
+        垃圾邮件 - E-Mail
+      </label>
+      <label for="spam_phone">
+        <input type="checkbox" class="checkbox" id="spam_phone" value="phone" name="spam[]">
+        垃圾邮件 - Phone
+      </label>
+      <label for="spam_mail">
+        <input type="checkbox" class="checkbox" id="spam_mail" value="mail" name="spam[]">
+        垃圾邮件 - Mail
+      </label>
+      <label for="spam[]" class="error">请选择至少两种类型的垃圾邮件。</label>
+    </fieldset>
+      <button id="submitForm" type="submit">提交</button>
+    </form>
+  </body>
+
+  <!--提交验证-->
+  <!--
+    	作者：85319019@qq.com
+    	时间：2017-05-18
+    	描述：最小长度能检测到，最大长度检测不到所以没有提示
+    	收获：document.activeElement
+    -->
+  <script type="text/javascript">
+        $(function() {
+          var validator = $("form").validate();
+          $("#submitForm").click(function() {
+            if(validator.form()) {
+              console.log("验证通过");
+            } else {
+              console.log("验证不通过");
+            }
+          })
+        });
+
+  </script>
+
+</html>

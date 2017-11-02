@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>mockjs</title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+  </head>
+
+  <body>
+    <form>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <select name="city">
+                <option>111</option>
+                <option>222</option>
+                <option>333</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <select name="city">
+                <option>111</option>
+                <option>222</option>
+                <option>333</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </body>
+  <script>
+    function isExist(name) {
+      return jQuery.grep($('select[name=city] option'), function(item) {
+        return(item.text == name);
+      }).length > 0;
+    }
+    $("select").on("change", function() {
+      validateCity();
+    });
+
+    function validateCity() {
+      var flag = false;
+
+      var arrayObj = [];
+
+      $("select[name='city']").each(function(index, item) {
+        if(arrayObj.isExist($(item).val())) {
+          flag = true;
+          console.log("对的");
+        } else array.push($(item).val());
+      });
+      return flag;
+    }
+  </script>
+
+</html>

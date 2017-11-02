@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jstree</title>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jstree/jstree.js"></script>
+		<script>
+			$('#jstree').jstree({
+                    "core" : {
+                        "animation" : 0,
+                        "themes" : { "dots": true,"icons":true ,"stripes":false},
+                        "check_callback" : true,
+                        "multiple" : false,
+                        'data' : data
+                    },
+                    "types" : {
+                        "#" : { "max_children" : 5,
+                            "max_depth" : 11 ,
+                        },
+                        "default" : {
+                            "icon" : "false",
+                            "valid_children" : ["default","text"]
+                        },
+                        "text" : {
+                            "icon" : "false",
+                            "valid_children" : []
+                        }
+                    },
+                    "plugins" : [ "state", "types", "wholerow" ]
+                });
+		</script>
+	</head>
+	<body>
+		<div class="col-md-3 organ-tree" data-jstreepanel-store="organTrees">
+    <div>
+      <i class="fa fa-cogs"></i>
+      <span>系统组织机构树</span>
+    </div>
+    <div class="jstree-panel"></div>
+  </div>
+	</body>
+</html>

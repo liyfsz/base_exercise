@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>selelctMul</title>
+		<style>
+			.sel{
+				position:absolute;border:1px solid #000000;width:80;height:20"
+			}
+			select{
+				position:absolute;clip:rect(2 80 20 2);margin:-2;width:84;background:#eeeeee
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span id="selVal">111</span>
+			<div class="sel">
+			<select  onchange="test(this)">
+    <option value="1">萝卜，我的value是1</option>
+    <option value="2">青菜，我的value是2</option>
+    <option value="3">小葱，我的value是3</option>
+    <option value="4">豆腐，我的value是4</option>
+    <option value="1">萝卜，我的value是1</option>
+    <option value="2">青菜，我的value是2</option>
+    <option value="3">小葱，我的value是3</option>
+    <option value="4">豆腐，我的value是4</option>
+</select>
+</div>
+<input type="button" value="点击显示选择的项目">
+		</div>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script>
+	  function test(aaa){
+	  	console.log(aaa);
+	  }
+		$(function(){
+    $("input:button").click(function() {
+        var sel = $("select").find("option:selected").text();
+        $("#selVal").text(sel);
+        //alert("多选列表所有的value值:"+all+"，其中被选中的是:"+sel+"。");
+    });
+})
+	</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>test</title>
+	</head>
+	<body>
+		
+		<script>
+			//闭包
+	function fn() {
+		let a = 1;
+		function func() {
+			console.log(a);
+		}
+		return func;
+	}
+
+	let a = 1;
+	let sub = fn();
+
+	sub(); // 1;
+</script>
+	</body>
+</html>

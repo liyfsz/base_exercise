@@ -1,0 +1,59 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\000035}}
+div {
+  color: #1875e7;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\000039}}
+.rounded {
+  border-left-radius: 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\0000312}}
+body {
+  margin: 7px;
+  top: 150px;
+  right: 10%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\0000319}}
+div h1 {
+  color: red;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\0000324}}
+p {
+  border-color: #1875e7;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\0000331}}
+a:hover {
+  color: #1875e7;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\0000336}}
+.class1, .class2 {
+  width: 100px;
+  height: 100px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\0000341}}
+.class2 {
+  font-size: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\0000351}}
+.callDiv {
+  float: left;
+  margin-left: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\0000360}}
+.callDivParam {
+  float: left;
+  margin-left: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Administrator\/Desktop\/DEMO01\/sass\/style\.scss}line{font-family:\0000364}}
+.container {
+  background-color: red;
+}

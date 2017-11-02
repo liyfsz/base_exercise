@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	    <meta charset="utf-8" />
+        <title>demo01</title>
+        <script src="js/jquery-1.11.1.min.js"></script>
+    </head>
+    <style>
+    	  .linear{
+    	  	width: 100px;
+    	  	height: 100px;
+    	  	background-image: linear-gradient(top,#F46B38,#EC574C);
+    	  	background-image: -webkit-linear-gradient(top,#F46B38,#EC574C);
+    	  	position: relative;
+    	  }
+    	  .linear > span{
+    	  	position: absolute;
+    	  	bottom: 0px;
+    	  	left: 0px;
+    	  	height: 20px;
+    	  	width: 100px;
+    	  	transform:rotate(90deg);
+-ms-transform:rotate(90deg); /* Internet Explorer */
+-moz-transform:rotate(90deg); /* Firefox */
+-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+-o-transform:rotate(90deg); /* Opera */
+          border: 1px solid #555;
+          
+    	  }
+      .linear > span > div{
+      	width: 20px;
+      	height: 20px;
+      	border-radius: 50%;
+      	background-color: #fff;
+      	border: none;
+      	padding: 0px;
+      }
+      input{
+      	border: 1px solid red;
+      }
+    </style>
+    <body>
+        <div class="linear">
+        	  <span>
+        	  	<div></div>
+        	  </span>
+        </div>
+        <input type="text" />
+        <div>展示栈排列：<br />
+        	<span id="stack1"></span><br />
+        	<span id="stack2"></span>
+        </div>
+        <div>展示队列排列：<br />
+        	<span id="queue1"></span><br />
+        	<span id="queue2"></span>
+        </div>
+        <div>字符串比较：<span id="compStr"></span></div>
+        
+        <script type="text/javascript">
+        //栈
+        	var colors1 = ["red"];
+        	colors1.push("black");
+        	colors1.push("blue","green");
+        	$("#stack1").html(colors1+"倒数第一个元素："+colors1.pop());
+        	$("#stack2").html(colors1+"倒数第一个元素："+colors1.pop());
+        	//队列
+        	var colors2 = ["red"];
+        	colors2.unshift("black");
+        	colors2.unshift("blue","green");
+        	$("#queue1").html(colors2+"第一个元素："+colors2.shift());
+        	$("#queue2").html(colors2+"第一个元素："+colors2.shift());
+        	//比较数字字符串，比较的是从头开始的每一位的ASCII
+        	 $("#compStr").html(("5">"10"));
+        	 //alert("1">"2");
+        </script>
+    </body>
+</html>

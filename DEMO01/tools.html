@@ -1,0 +1,258 @@
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				font-size: 30px;
+			}
+			/*去掉默认样式*/
+			input[type=range] {
+    -webkit-appearance: none;
+    width: 300px;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+   
+   /*track完全填充*/
+    background: -webkit-linear-gradient(#059CFA, #059CFA) no-repeat;
+    background-size: 0% 100%;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+/*给滑动轨道(track)添加样式*/
+input[type=range]::-webkit-slider-runnable-track {
+    height: 15px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+    /*box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;*/
+    
+    /*左右上下的阴影*/
+   /*box-shadow: 
+    -10px 0 10px #D9D9D9 inset,  
+    10px 0 10px #D9D9D9 inset, 
+    0 -10px 10px #D9D9D9 inset, 
+    0 10px 10px #D9D9D9 inset;  */
+}
+input[type=range]:focus {
+    outline: none;
+}
+
+/*给滑块(thumb)添加样式*/
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+    background: #ffffff; 
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}
+.verifyTit{
+	background-color: #f5f5f5;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.verifyTit span{
+	border-left: 8px solid #ff6959;
+	padding-left: 14px;
+	font-size: 26px;
+	line-height: 26px;
+	display: block;
+	height: 30px;
+}
+
+/*  input[type="radio"] {
+	width: 85px;
+	height: 40px;
+	opacity: 0;
+	position: absolute;
+	z-index: 2;
+}
+
+  input[type="radio"]+span {
+	-webkit-appearance: none;
+	background-color: #fff;
+	border: 1px solid #0099ff;
+	height: 40px;
+	width: 85px;
+	border-radius: 20px;
+	display: inline-block;
+	position: relative;
+	line-height: 38px;
+}
+
+  input:checked+span {
+	background: #0099ff;
+	color: #fff;
+}*/ 
+
+ .regular-radio {  
+    display: none;  
+}  
+  
+.regular-radio + label {  
+    -webkit-appearance: none;  
+    background-color: RGB(248,248,249);  
+    padding: 9px;  
+    border-radius: 50px;  
+    /*padding: .09rem;  
+    border-radius: .5rem;*/  
+    display: inline-block;  
+    position: relative;  
+}  
+  
+.regular-radio:checked + label:after {  
+    content: ' ';  
+    width: 12px;  
+    height: 12px;  
+    border-radius: 50px;  
+    position: absolute;  
+    top: 3px;  
+    background: #E72F17;  
+    text-shadow: 0px;  
+    left: 3px;  
+    font-size: 32px;  
+}  
+  
+.regular-radio:checked + label {  
+    background-color: #e9ecee;  
+} 
+    p{
+    	word-break: break-all;
+    	word-break: break-word;
+    }
+		</style>
+
+	</head>
+
+	<body>
+		<!--<li class="clickBind">
+			<input type="radio" name="radio" id="radio1" class="radio"/>
+		<span for="radio1">1</span>
+		<input type="text" name="sex" disabled=""/>
+		</li>-->
+		<li>
+			<input type="radio" name="radio" id="radio1" class="radio"/>
+		<span for="radio1">1</span>
+		<input type="text" name="sex" disabled="" value="1"/>
+		</li>
+		<li>
+			<input type="radio" name="radio" id="radio2" class="radio"/>
+		<span for="radio2">1</span>
+		<input type="text" name="sex" disabled="" value="2"/>
+		</li>
+		<li>
+			<input type="radio" name="radio" id="radio3" class="radio"/>
+		<span for="radio3">1</span>
+		<input type="text" name="sex" disabled="" value="3"/>
+		</li>
+		<li>
+			<input type="radio" name="radio" id="radio4" class="radio"/>
+		<span for="radio4">1</span>
+		<input type="text" name="sex" disabled="" value="3"/>
+		</li>
+		<li>
+			<input type="radio" name="radio" id="radio5" class="radio"/>
+		<span for="radio5">1</span>
+		<input type="text" name="sex" disabled="" value="5"/>
+		</li>
+		
+		<!--<input type="range" min="1" max="1000" value="3" />
+		<input class="idnum" value="11010219780272321"/>
+		<img src="img/ok.png" class="imgSize" id="img"/>
+		<form>
+			<input name="time1" value=""/>
+			<input name="time2" value=""/>
+			<input name="time3" value=""/>
+			<input name="time4" value=""/>
+		</form>
+		<input name="sex" value="1"/>
+		<input name="age" value="14" disabled="true"/>
+		<input name="time" value="18"/>
+		<input name="time" value="14" disabled=""/>-->
+		
+		<!--<div class="verifyTit">
+			<span>111</span>
+		</div>-->
+		
+		<div class="">
+			<input type="radio" id="radio-1" name="radio-1-set" class="regular-radio"/>  
+<label for="radio-1"></label>  
+<label class="inputlabel" for="radio-1" style="font-size: 30px;">微信支付</label> 
+		</div>
+		 
+
+    <div>
+    	<p>人士、互联网专业人士构成人士构均具备联网专网专业人士构成，骨
+    	</p>
+    	
+    </div>
+    <input id="regid" onblur="isQuota(this)"/>
+    
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/RangeSlider.js"></script>
+		<script>
+			var change = function($input) {
+				/*内容可自行定义*/
+				console.log("123");
+			}
+
+			$('input[type=range]').RangeSlider({
+				min: 0,
+				max: 100,
+				step: 0.1,
+				callback: change
+			});
+			
+			$(".radio").change(function(){
+					$(this).siblings("input").removeAttr("disabled").addClass("abled");
+					$(this).parent("li").siblings().find("input[type=text]").attr("disabled",true);
+					var disabledVal = $("input[name=sex].abled").val();
+			console.log(disabledVal);
+			});
+			
+			
+			
+			var data = {"time1":"12","time2":"13","time3":"14","time4":"15"}
+			$("form").find("input").each(function(){
+				console.log(data[$(this).attr('name')]);
+        });
+        
+      function isCardNo(card) 
+{ 
+// 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X 
+var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; 
+if(reg.test(card) === false) 
+{ 
+/*alert("身份证输入不合法"); */
+return false; 
+} 
+}
+        isCardNo($(".idnum").val());
+        
+        
+       
+    $(".clickBind").click(function(){
+    	alert(111);
+    });
+    
+    console.log($("p").css("font-size"));
+    
+    function isQuota(event){
+    	
+    	var value = $(event).val();
+    	console.log(value);
+	var valRange =( value <= 500000)&&( value >= 0);
+	var isFloat = /^[1-9]*[1-9][0-9]*$/.test(value);
+	console.log(isFloat);
+	console.log(valRange&&isFloat+"111");
+return valRange&&isFloat;
+
+};
+    
+		</script>
+
+	</body>
+
+</html>

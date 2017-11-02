@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>反序列化取值</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery-deserialize/1.3.3/jquery.deserialize.js"></script>
+    <script>
+      $(document).ready(function() {
+          htmlobj = $.ajax({
+            url: "data.json",
+            async: false,
+            dataType:"json"
+          });
+          console.log(htmlobj);
+          $("form").deserialize(htmlobj.responseJSON);
+      });
+    </script>
+  </head>
+
+  <body>
+    <form>
+      <div id="myDiv">
+        <input name="name" id="getName" />
+      </div>
+    </form>
+  </body>
+</html>

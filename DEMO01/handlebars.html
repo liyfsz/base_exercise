@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>handlebars demo</title>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/handlebars/4.0.4/handlebars.js" ></script>
+		<script type="text/javascript" src="js/helpers.js" ></script>
+	</head>
+	<body>
+		  <table style="width: 100%; text-align: center;">
+		  	  <thead>
+		  	  	  <tr>
+		  	  	  	  <th>序号</th>
+		  	  	  	  <th>姓名</th>
+		  	  	    <th>年龄</th>
+		  	  	    <th>性别</th>
+		  	  	    <th>职业</th>
+		  	  	    <th>薪水</th>
+		  	  	    <th>合计</th>
+		  	  	    <th>班级</th>
+		  	  	    <th>爱好</th>
+		  	  	  </tr>
+		  	  </thead>
+		  	  <tbody id="setHtml">
+		  	  	  
+		  	  </tbody>
+		  </table>
+	</body>
+	<script id="tr-template" type="text/x-handlebars-template">
+		  	  {{#students}}
+		  	  <tr>
+		  	  	    <td>{{@index}}</td>
+		  	  	  	  <td>{{{name}}}</td>
+		  	  	  	  <td>{{age}}</td>
+		  	  	  	  <td>{{#if (eq sex 'male')}}男{{else if (eq sex 'female')}}女{{else}}其他{{/if}}</td>
+		  	  	  	  <!--<td>{{#if (eq sex 'male')}}男{{else}}女{{/if}}</td>-->
+		  	  	  	  <td>{{work.year}}年</td>
+		  	  	  	  <td>{{salary}}</td>
+		  	  	  	  <td>{{sum salary bonus}}</td>
+		  	  	  	  <td>{{../class}}</td>
+		  	  	  	  <td>
+		  	  	  	  	  {{#favs}}
+		  	  	  	  	    {{this.fir}},{{sec}},{{thi}}</br>
+		  	  	  	  	  {{/favs}}
+		  	  	  	  </td>
+		  	  	  	  <td>{{this.formatMoney}}</td>
+		  	  	  </tr>
+		  	  	 {{/students}}
+		  </script>
+	<script>
+		  $.ajax({
+			type:"get",
+			url:"handlebars.json",
+			async:true,
+			success:function(data){
+				var source   = $("#tr-template").html();
+        var template = Handlebars.compile(source);
+        var context = data;
+        var html    = template(context);
+         $("#setHtml").html(html);
+			}
+		});
+    
+	</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mockjs</title>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="http://rap.taobao.org/rap.plugin.js?projectId=7718"></script>
+        <!--
+        	作者：85319019@qq.com
+        	时间：2016-09-21
+        	描述：
+        	
+        -->
+    </head>
+    <style>
+    	body{
+    		font-size: 30px;
+    	}
+    </style>
+    <body>
+        <div id="box"></div>
+        <script>
+            $.ajax(
+            	{
+                //url:"getData",
+                url:"data.json",
+                data:{
+                	id:100
+                },
+                success:function(data){
+                	$("#box").html(data.id);
+                },
+                error:function(error){
+                	console.log('aaaa');
+                }
+            });
+            
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>handlebars demo</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/handlebars/4.0.4/handlebars.js"></script>
+    <script type="text/javascript" src="js/helpers.js"></script>
+  </head>
+
+  <body>
+    <table style="width: 100%; text-align: center;">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>姓名</th>
+          <th>年龄</th>
+          <th>weizhi</th>
+        </tr>
+      </thead>
+      <tbody id="setHtml">
+
+      </tbody>
+    </table>
+  </body>
+  <script id="tr-template" type="text/x-handlebars-template">
+    {{#each students}}
+    <tr>
+      <td rowspan={{students.length}}>{{name}}</td>
+      <td colspan="3">
+        <table class="table" style="width: 100%; text-align: center;">
+          <tbody>
+            {{#each list}}
+            <tr>
+              <td>{{a}}</td>
+              <td>{{b}}</td>
+              <td>{{c}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    {{/each}}
+  </script>
+  <script>
+    $.ajax({
+      type: "get",
+      url: "handlebarsTable.json",
+      async: true,
+      success: function(data) {
+        var source = $("#tr-template").html();
+        var template = Handlebars.compile(source);
+        var context = data;
+        var html = template(context);
+        $("#setHtml").html(html);
+      }
+    });
+  </script>
+
+</html>
