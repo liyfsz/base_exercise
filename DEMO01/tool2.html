@@ -14,6 +14,15 @@
 h1 {font-size: 300%}
 h2 {font-size: 200%}
 p {font-size: 100%}
+
+  .downloadSrc{
+	position: relative;
+}
+.downloadSrc ul{
+	display: none;
+	position: absolute;
+	top: 30px;
+}
 </style>
 </head>
 
@@ -30,17 +39,26 @@ p {font-size: 100%}
 <a href="http://192.168.2.52:7080/cb/api/app/viewContract?loCoNo=7eb09bd301eb26b4b3a97f875010fa63" class="changeIP">换掉域名</a>
 <button onclick="testIfelse(3)">测试ifelse执行顺序</button>
 
-<div class="date date-picker-page">
+<!--<div class="date date-picker-page">
 						            <input type="text" readonly class="form-control required" placeholder="请输入发放时间..." name="sendDt">   
 							          <span class="input-group-btn">
                           <button class="btn default calendar-button" type="button">
                             <i class="fa fa-calendar"></i>
                           </button>
                         </span>
-						          </div>
+						          </div>-->
 						          
 	<input value="111" class="putValConsole"/>
-
+  
+  <div class="fr downloadSrc">
+					<span>下载源文件</span>
+					<ul>
+						<li><a href="">芝麻信用分</a></li>
+						<li><a href="">反欺诈详情</a></li>
+						<li><a href="">反欺诈评分</a></li>
+						<li><a href="">行业详情</a></li>
+					</ul>
+				</div>
 
 <script src="js/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
 	<script src="js/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
@@ -87,6 +105,20 @@ p {font-size: 100%}
 
   
   $(".putValConsole").val("222");
+  
+  $(".downloadSrc").click(function(){
+					$(this).find("ul").slideToggle();
+				});
+				
+  $(document).ready(function(){ 
+  alert(222);
+  window.open("callAliveCer(222)");
+}); 
+
+window.onload=function(){ 
+window.open("callAliveCer(222)");
+
+} 
 </script>
 </body>
 
