@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>调用照相机</title>
+		<style>
+		  *{
+		    padding: 0px;
+		    margin: 0px;
+		    font-size: 30px;
+		    
+		  }
+		  body{
+		    margin-top: 40px;
+		  }
+		</style>
+	</head>
+	<body>
+	  <!--
+	    
+	    0、默认：
+	    安卓：优先最近的照片，也可以通过所有栏目选择；
+	    iphone:照片图库，拍照或录像
+	    
+	    1、accept="image/*;capture=camera"：
+	    安卓：优先选择最近的照片，也可以通过所有栏目选择
+	    iphone:照片图库，拍照或录像
+	    
+	    2、accept="image/*"：
+	    安卓：调用安卓的相机和所有图片文件（优先最近的）
+	    iphone:照片图库的照片，拍照
+	    
+	    3、accept="image/*" capture="camera"分隔
+	    安卓：只能调相机
+      iphone:照片图库里的照片，拍照
+      
+      4、accept="video/*" capture="camcorder/camera"分隔
+      安卓：只能调摄像头
+      iphone:录像，照片图库的视频
+      
+	  -->
+	  上传：
+	  <input type="file" value="文件测试" accept="video/*" capture="camera"/>
+	</body>
+</html>
