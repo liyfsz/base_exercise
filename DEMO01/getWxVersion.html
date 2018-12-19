@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取微信版本号</title>
+	</head>
+	<body>
+	  <div>微信信息：<span id="weixinInfor"></span></div>
+	  <div>该微信版本号是<span id="weixinVer"></span></div>
+	  <div>该微信版本号是否大于5<span id="weixinGt"></span></div>
+	  
+	  
+	</body>
+	<script src="js/jquery/jquery-1.11.1.min.js"></script>
+	<script>
+	  $(function(){
+	    var wechatInfo = navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/i);
+	    console.log(wechatInfo);
+      //var wechatVersion = wechatInfo[1] // 获取微信版本号
+      
+      //$("#weixinInfor").text(wechatInfo);
+      //$("#weixinVer").text(wechatVersion);
+      $("#weixinGt").text(("6.6.6").split(".")[0] > 5 ? '是':'否');
+      
+	  });
+	  
+    
+	</script>
+</html>
