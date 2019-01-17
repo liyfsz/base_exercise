@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>加密解密</title>
+		<script src="crypto-js/crypto-js.js"></script>
+	</head>
+	<body>
+	    
+	    
+	    <script>
+            //加密
+	        var key = CryptoJS.enc.Utf8.parse("8NONwyJtHesysWpM");
+	        var plaintText = "就只能是个字符串";//明文
+	        var encryptedData = CryptoJS.AES.encrypt(plaintText, key, {
+	            mode: CryptoJS.mode.ECB,
+	            padding: CryptoJS.pad.Pkcs7
+	        });
+	        console.log("加密前："+plaintText);
+            console.log("加密后："+encryptedData);
+            
+            //解密
+            encryptedData = encryptedData.ciphertext.toString();
+            var encryptedHexStr = CryptoJS.enc.Hex.parse(encryptedData);
+            var encryptedBase64Str = CryptoJS.enc.Base64.stringify(encryptedHexStr);
+            var decryptedDataAdd = CryptoJS.AES.decrypt(encryptedBase64Str, key, {
+                mode: CryptoJS.mode.ECB,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            var decryptedStr = decryptedDataAdd.toString(CryptoJS.enc.Utf8);
+            console.log("解密后:" + decryptedStr);
+            var pwd = "PCsUFtgog9/qpqmqXsuCRQ==";
+            //加密服务端返回的数据
+            var decryptedDataInit = CryptoJS.AES.decrypt(pwd, key, {
+                mode: CryptoJS.mode.ECB,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            console.log("解密服务端返回的数据:" + decryptedDataInit);
+	    </script>
+	</body>
+</html>

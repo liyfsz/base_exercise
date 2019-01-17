@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>二维码功能</title>
+		<script src="js/jquery/jquery-1.8.3.min.js"></script>
+		<script src="js/uploadjs/jquery.qrcode.min.js"></script>
+	</head>
+	<body>
+	  图片二维码：<br />
+	  <img src="img/erweima.png" title="二维码"/>
+	  <hr />
+	  
+	  js生成的二维码：<br />
+	  <div id="code"></div>
+	  二维码图片：<br />
+	  <div id="qrDiv"></div>
+	</body>
+	<script>
+	  function toUtf8(str) {    
+    var out, i, len, c;    
+    out = "";    
+    len = str.length;    
+    for(i = 0; i < len; i++) {    
+        c = str.charCodeAt(i);    
+        if ((c >= 0x0001) && (c <= 0x007F)) {    
+            out += str.charAt(i);    
+        } else if (c > 0x07FF) {    
+            out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));    
+            out += String.fromCharCode(0x80 | ((c >>  6) & 0x3F));    
+            out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));    
+        } else {    
+            out += String.fromCharCode(0xC0 | ((c >>  6) & 0x1F));    
+            out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));    
+        }    
+    }    
+    return out;    
+}
+	  
+	  var str = toUtf8("字符串测试！"); 
+	  //$('#code').qrcode("http://www.baidu.com"); //任意字符串 
+	  $('#code').qrcode(str); //任意字符串 
+	  
+	  
+	  //从 canvas 提取图片 image 
+	  function convertCanvasToImage(canvas) {
+	    //新Image对象，可以理解为DOM 
+	    var image = new Image();
+	    // canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持 
+	    // 指定格式 PNG 
+	    image.src = canvas.toDataURL("image/png");
+	    return image;
+	  }
+
+	  var mycanvas1 = document.getElementsByTagName('canvas')[0];
+  //将转换后的img标签插入到html中 
+  var img=convertCanvasToImage(mycanvas1); 
+   $('#qrDiv').append(img);//imagQrDiv表示你要插入的容器id    
+ 
+ 
+	</script>
+</html>
