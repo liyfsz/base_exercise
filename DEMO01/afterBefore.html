@@ -2,9 +2,12 @@
 <html>
     <head>
     	    <meta charset="utf-8" />
-        <title>after</title>
+        <title>伪元素</title>
         <script src="js/jquery-1.11.1.min.js"></script>
         <style>
+        /*两种元素必须拥有相同的父元素，但是 i不必直接紧随之前的元素。
+         * content 属性与 :before 及 :after 伪元素配合使用，来插入生成内容
+         */
         	div input.aaa ~ i:after{
         		content: '%';
         	}
