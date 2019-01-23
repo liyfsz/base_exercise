@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>fixed的页面滚动卡顿ios</title>
+		
+		<style>
+		     *{
+		         padding: 0px;
+		         margin: 0px;
+		         font-size: 40px;
+		     }
+		     html{
+		     }
+		     body{
+		     }
+		    .page-container{
+		        background-color: green;
+		        height: 100%;
+		        position: fixed;
+		        width: 100%;
+		        overflow-y: scroll;
+		        /*-webkit-overflow-scrolling: touch;*/
+		    }
+		    .page-container > div{
+		        margin: 20px 0px;
+		    }
+		    .page-container label{
+		        display: inline-block;
+		        width: 150px;
+		    }
+		    .page-container input{
+		        border: 1px solid red;
+		        line-height: 60px;
+		        padding-left: 20px;
+		    }
+		     .page-container p{
+		         height: 500px;
+		         padding: 20px 10px;
+		     }
+		</style>
+	</head>
+	<body>
+	    <form class="page-container">
+	        <div>
+	            <label>姓名1</label>
+	            <input name="name"/>
+	        </div>
+	        <div>
+                <label>姓名2</label>
+                <input name="age"/>
+            </div>
+            <div>
+                <label>姓名3</label>
+                <input name="sex"/>
+            </div>
+            <p>
+                asdasdasdasdada
+            </p>
+            <p>
+                asdasdasdasdada
+            </p>
+            <p>
+                asdasdasdasdada
+            </p>
+            <p>
+                asdasdasdasdada
+            </p>
+	    </form>
+	</body>
+</html>
