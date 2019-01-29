@@ -5,12 +5,18 @@
 		<title>doc write</title>
 		
 		<script>
-		    document.write("<h1>这是头部</h1>");
+		    document.write("<h1>这是head 的document write</h1>");
 		</script>
 	</head>
 	<body>
+	    <span>这是body的自然内容</span>
 	    <script>
-            document.write("<h1>这是内容区</h1>");
+            document.write("<h1>这是body的 document write</h1>");
+            
+            //文档流加载完
+            setTimeout(function () {
+              document.write("覆盖body的所有的文档")
+            },2000);
         </script>
         
         <!--
