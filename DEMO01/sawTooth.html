@@ -23,20 +23,38 @@
  
 .sawtooth:before {
     /* 圆点型的border */
-    border-right: 15px dotted white;
+    border-right: 10px dotted white;
     /* 偏移一个半径，让圆点的一半覆盖p */
     left: -5px;
 }
  
 .sawtooth:after {
     /* 圆点型的border */
-    border-left: 15px dotted white;
+    border-left: 10px dotted white;
     /* 偏移一个半径，让圆点的一半覆盖p */
     right: -5px;
+}
+.nomalBox{
+    margin-top:30px;
+    width:716px;
+    height:190px;
+    background: orange;
+    position: relative;
+    margin-left: 100px;
+}
+.nomalBox:before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    background: url(img/sawtoothLong.png);
+    position: absolute;
+    left: -1px;
 }
 		</style>
 	</head>
 	<body>
-	    <div class="sawtooth"></div>
+	    <!--<div class="sawtooth"></div>-->
+	    
+	    <div class="nomalBox">asdasdsa</div>
 	</body>
 </html>
