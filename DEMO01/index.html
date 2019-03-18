@@ -19,6 +19,12 @@
     <body>
         <div id="box"></div>
         <script>
+            function getUrlParam(paramName){
+                var reg = new RegExp("(^|&)" + paramName + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+               if (r != null) return decodeURIComponent(r[2]); return null;
+            }
+            alert(getUrlParam("id"));
             $.ajax(
             	{
                 //url:"getData",
